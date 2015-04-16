@@ -22,23 +22,24 @@ function printPlayers($name, $conn) {
 	$stmt->execute();
 	$results = $stmt->fetchAll();
 	
-	//append to paragraph element
-	echo '<p>';
-	//integer count fixes double name printing
-	$count = 0;
+	//append to list as list element
+	echo '<li>';
+	//boolean toPrint fixes double name printing
+	$toPrint = false;
 	foreach ($results as $result) {
 		//print each players stats
 		foreach ($result as $stat) {
-			if ($count > 0) {
+			if ($toPrint) {
 				//include spacing for aesthetics
-				echo $stat . '&nbsp&nbsp&nbsp&nbsp&nbsp';
+				echo $stat . '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp';
+				$toPrint = false;
+			} else {
+				$toPrint = true;
 			}
-			$count++;
 		}
-		count = 0;
-		echo '<hr /><br />';
+		echo '<hr />';
 	}
-	echo '</p>';
+	echo '</li>';
 }
 
 ?>
