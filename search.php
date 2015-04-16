@@ -22,19 +22,21 @@ if (isset($_GET["playername"])) {
 		<form action="Search.php" method="get">
 			<input name="playername" type="text" size="20" placeholder="Name" autofocus="autofocus" />
 		</form>
-		
-		<!--Sees if we need to print results-->
-		<?php
-			if ($alreadyqueried) { ?>
-				<!--If the user already submitted a query, we know to print-->
-				<ul><h2>STATS RETRIEVED :</h2><br />
-				<span>NAME</span>
-				<span>Field Goal Percentage</span>
-				<span>Three Point Percentage</span>
-				<span>Free Throw Percentage</span>
-				<span>Points Per Game</span>
-				<?php printPlayers($query, $conn); ?>
-				</ul>
-		<?php } ?>
+		<div id="main">
+			<!--Sees if we need to print results-->
+			<?php
+				if ($alreadyqueried) { ?>
+					<!--If the user already submitted a query, we know to print-->
+					<h2>STATS RETRIEVED :</h2><br />
+					<span>NAME</span>
+					<span>Field Goal Percentage</span>
+					<span>Three Point Percentage</span>
+					<span>Free Throw Percentage</span>
+					<span>Points Per Game</span>
+					<ul>
+					<?php printPlayers($query, $conn); ?>
+					</ul>
+			<?php } ?>
+		</div>
 	</body>
 </html>
