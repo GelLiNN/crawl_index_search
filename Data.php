@@ -24,6 +24,7 @@ function printPlayers($name, $conn) {
 	
 	//append to paragraph element
 	echo '<p>';
+	//integer count fixes double name printing
 	$count = 0;
 	foreach ($results as $result) {
 		//print each players stats
@@ -34,6 +35,7 @@ function printPlayers($name, $conn) {
 			}
 			$count++;
 		}
+		count = 0;
 		echo '<hr /><br />';
 	}
 	echo '</p>';
