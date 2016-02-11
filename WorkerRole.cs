@@ -1,4 +1,6 @@
 //Kellan Nealy, #1331068, info 344 PA3
+//This class scrapes pages recursively from the XML sitemap,
+//and adds them to the Azure cloud table
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
